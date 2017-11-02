@@ -115,14 +115,20 @@
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>
+    <ClCompile Include="..\src\Actor.cpp" />
     <ClCompile Include="..\src\CinderPlatformerApp.cpp" />
+    <ClCompile Include="..\src\Component.cpp" />
     <ClCompile Include="..\src\GameManager.cpp" />
+    <ClCompile Include="..\src\GameScene.cpp" />
     <ClCompile Include="..\src\Manager.cpp" />
     <ClCompile Include="..\src\Object.cpp" />
     <ClCompile Include="..\src\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\Actor.h" />
+    <ClInclude Include="..\include\Component.h" />
     <ClInclude Include="..\include\GameManager.h" />
+    <ClInclude Include="..\include\GameScene.h" />
     <ClInclude Include="..\include\Info.h" />
     <ClInclude Include="..\include\Manager.h" />
     <ClInclude Include="..\include\Object.h" />

@@ -2,7 +2,7 @@
 
 
 
-Manager::Manager()
+Manager::Manager() : Object()
 {
 }
 

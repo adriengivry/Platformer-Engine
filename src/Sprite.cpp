@@ -1,11 +1,13 @@
 #include "Sprite.h"
 
-Sprite::Sprite()
+
+Sprite::Sprite(const std::string p_imagePath, const float p_x, const float p_y, const float p_scaleX, const float p_scaleY)
 {
-	const auto img = loadImage(loadAsset("character.png"));
-	m_texture = gl::Texture2d::create(img);
-	m_position = vec2(0, 0);
-	m_scale = vec2(1, 1);
+	if (p_imagePath != "")
+		SetTexture(p_imagePath);
+
+	SetPosition(p_x, p_y);
+	SetScale(p_scaleX, p_scaleY);
 }
 
 void Sprite::SetPosition(const float p_posX, const float p_posY)
@@ -30,6 +32,12 @@ void Sprite::SetScale(const vec2& p_scale)
 	m_scale = p_scale;
 }
 
+void Sprite::SetTexture(const std::string p_path)
+{
+	const auto img = loadImage(loadAsset(p_path));
+	SetTexture(gl::Texture2d::create(img));
+}
+
 void Sprite::Move(const float p_x, const float p_y)
 {
 	m_position.x += p_x;
@@ -38,9 +46,12 @@ void Sprite::Move(const float p_x, const float p_y)
 
 void Sprite::Draw() const
 {
-	gl::pushModelMatrix();
-	gl::translate(GetPosition().y, GetPosition().x);
-	gl::scale(GetScale().x, GetScale().y);
-	gl::draw(m_texture);
-	gl::popModelMatrix();
+	if (GetTexture())
+	{
+		gl::pushModelMatrix();
+		gl::translate(GetPosition().y, GetPosition().x);
+		gl::scale(GetScale().x, GetScale().y);
+		gl::draw(GetTexture());
+		gl::popModelMatrix();
+	}
 }
