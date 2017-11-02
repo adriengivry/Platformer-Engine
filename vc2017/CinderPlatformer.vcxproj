@@ -47,6 +47,12 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)build\$(Platform)\$(Configuration)\intermediate\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -110,9 +116,18 @@
   <ItemGroup />
   <ItemGroup>
     <ClCompile Include="..\src\CinderPlatformerApp.cpp" />
+    <ClCompile Include="..\src\GameManager.cpp" />
+    <ClCompile Include="..\src\Manager.cpp" />
+    <ClCompile Include="..\src\Object.cpp" />
+    <ClCompile Include="..\src\Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\GameManager.h" />
+    <ClInclude Include="..\include\Info.h" />
+    <ClInclude Include="..\include\Manager.h" />
+    <ClInclude Include="..\include\Object.h" />
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\include\Sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
