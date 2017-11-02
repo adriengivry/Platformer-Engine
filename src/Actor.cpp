@@ -17,9 +17,6 @@ void Actor::Update()
 	{
 		if (IsTickable())
 			Tick();
-
-		if (IsDrawable())
-			Draw();
 	}
 }
 
@@ -30,5 +27,8 @@ void Actor::Tick()
 
 void Actor::Draw()
 {
-	GetSprite().Draw();
+	if (IsDrawable())
+	{
+		GetSprite().Draw();
+	}
 }

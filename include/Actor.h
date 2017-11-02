@@ -21,6 +21,9 @@ public:
 	void SetTickable(const bool p_state) { m_isTickable = p_state; }
 	void SetDrawable(const bool p_state) { m_isDrawable = p_state; }
 
+	void SetTexture(const std::string p_path) { m_sprite.SetTexture(p_path); }
+	void SetTexture(const gl::Texture2dRef p_texture) { m_sprite.SetTexture(p_texture); }
+
 	void Update();
 	void Tick();
 	void Draw();
