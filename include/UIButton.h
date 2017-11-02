@@ -1,15 +1,10 @@
 #pragma once
 
-#include "UIComp.h"
-#include "Hitbox.h"
-#include "Sprite.h"
+#include "UIObject.h"
 
-class UIButton : public UIComp
+class UIButton : public UIObject
 {
 public:
 	UIButton();
 	~UIButton() {}
-
-protected:
-
 };

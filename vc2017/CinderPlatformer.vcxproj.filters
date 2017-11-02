@@ -12,6 +12,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Header Files\Object">
+      <UniqueIdentifier>{dea9a311-562b-4662-afef-8ae9939c71b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Object\Manager">
+      <UniqueIdentifier>{61bdad68-2092-4365-8038-975201b7ac10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Object\GameObject">
+      <UniqueIdentifier>{07ccc71b-c7bf-4214-a6bd-da561837654a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Object\Component">
+      <UniqueIdentifier>{713925bb-a4bc-4a42-93a8-8edbcbd689f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object">
+      <UniqueIdentifier>{401b5b54-f3c3-4afd-9994-17ca0b3ad361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object\Component">
+      <UniqueIdentifier>{7772d772-533e-4020-befc-357c391350b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object\Manager">
+      <UniqueIdentifier>{29964d5b-aeca-4d54-b696-a200cf9544ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Object\GameObject">
+      <UniqueIdentifier>{cb4ed46f-d232-4971-9516-3fa2ceaf5e98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\CinderPlatformerApp.cpp">
@@ -20,73 +44,91 @@
     <ClCompile Include="..\src\CinderPlatformerApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClInclude Include="..\include\Resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClCompile Include="..\src\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\GameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Component.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Object\Component</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\GameScene.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\src\Manager.cpp">
+      <Filter>Source Files\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameObject.cpp">
+      <Filter>Source Files\Object\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Actor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Object\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UIButton.cpp">
+      <Filter>Source Files\Object\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UIObject.cpp">
+      <Filter>Source Files\Object\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="..\src\EventManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameManager.cpp">
+      <Filter>Source Files\Object\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameScene.cpp">
+      <Filter>Source Files\Object\Manager</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Hitbox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Object\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Sprite.cpp">
+      <Filter>Source Files\Object\Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\Object.h">
+    <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Manager.h">
+      <Filter>Header Files\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\EventManager.h">
+      <Filter>Header Files\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameManager.h">
+      <Filter>Header Files\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameScene.h">
+      <Filter>Header Files\Object\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\GameObject.h">
+      <Filter>Header Files\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Actor.h">
+      <Filter>Header Files\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\UIButton.h">
+      <Filter>Header Files\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\UIObject.h">
+      <Filter>Header Files\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Component.h">
+      <Filter>Header Files\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Event.h">
+      <Filter>Header Files\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Hitbox.h">
+      <Filter>Header Files\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Sprite.h">
+      <Filter>Header Files\Object\Component</Filter>
     </ClInclude>
     <ClInclude Include="..\include\Info.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\GameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\Component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\GameScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\Actor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\EventManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\Event.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\Hitbox.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\include\Object.h">
+      <Filter>Header Files\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

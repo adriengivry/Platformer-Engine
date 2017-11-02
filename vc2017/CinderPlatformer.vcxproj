@@ -122,13 +122,14 @@
     <ClCompile Include="..\src\Component.cpp" />
     <ClCompile Include="..\src\EventManager.cpp" />
     <ClCompile Include="..\src\GameManager.cpp" />
+    <ClCompile Include="..\src\GameObject.cpp" />
     <ClCompile Include="..\src\GameScene.cpp" />
     <ClCompile Include="..\src\Hitbox.cpp" />
     <ClCompile Include="..\src\Manager.cpp" />
     <ClCompile Include="..\src\Object.cpp" />
     <ClCompile Include="..\src\Sprite.cpp" />
     <ClCompile Include="..\src\UIButton.cpp" />
-    <ClCompile Include="..\src\UIComp.cpp" />
+    <ClCompile Include="..\src\UIObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Actor.h" />
@@ -136,6 +137,7 @@
     <ClInclude Include="..\include\Event.h" />
     <ClInclude Include="..\include\EventManager.h" />
     <ClInclude Include="..\include\GameManager.h" />
+    <ClInclude Include="..\include\GameObject.h" />
     <ClInclude Include="..\include\GameScene.h" />
     <ClInclude Include="..\include\Hitbox.h" />
     <ClInclude Include="..\include\Info.h" />
@@ -144,7 +146,7 @@
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\include\Sprite.h" />
     <ClInclude Include="..\include\UIButton.h" />
-    <ClInclude Include="..\include\UIComp.h" />
+    <ClInclude Include="..\include\UIObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
