@@ -1,6 +1,6 @@
 #include "Hitbox.h"
 
-Hitbox::Hitbox(const float p_x, const float p_y, const float p_sizeX, const float p_sizeY)
+Hitbox::Hitbox(const float p_x, const float p_y, const float p_sizeX, const float p_sizeY) : Component()
 {
 	m_position.x = p_x;
 	m_position.y = p_y;

@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -64,7 +64,7 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>"D:\library\cinder_0.9.1_vc2013\include";..\include</AdditionalIncludeDirectories>
@@ -88,7 +88,7 @@
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
     </ClCompile>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
@@ -127,6 +127,8 @@
     <ClCompile Include="..\src\Manager.cpp" />
     <ClCompile Include="..\src\Object.cpp" />
     <ClCompile Include="..\src\Sprite.cpp" />
+    <ClCompile Include="..\src\UIButton.cpp" />
+    <ClCompile Include="..\src\UIComp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Actor.h" />
@@ -141,6 +143,8 @@
     <ClInclude Include="..\include\Object.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\include\Sprite.h" />
+    <ClInclude Include="..\include\UIButton.h" />
+    <ClInclude Include="..\include\UIComp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

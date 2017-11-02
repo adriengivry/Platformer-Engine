@@ -14,6 +14,7 @@ public:
 
 	std::list<Actor*>& GetActors() { return m_actors; }
 
+	void Setup();
 	void Update(EventManager& p_eventManager);
 	void Display();
 

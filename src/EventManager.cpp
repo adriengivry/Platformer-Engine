@@ -2,7 +2,13 @@
 
 EventManager::EventManager()
 {
+	AddEvent("MOUSE_DOWN", false);
+
 	AddEvent("MOUSE_LEFT_DOWN", false);
+	AddEvent("MOUSE_RIGHT_DOWN", false);
+
+	AddEvent("MOUSE_LEFT_UP", false);
+	AddEvent("MOUSE_RIGHT_UP", false);
 }
 
 std::map<std::string, AG::Event>& EventManager::GetEvents()

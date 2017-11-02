@@ -11,8 +11,8 @@ using namespace std;
 class CinderPlatformerApp : public App {
   public:
 	void setup() override;
-	void mouseDown( MouseEvent event ) override;
-	void keyDown(KeyEvent event) override;
+	void mouseDown(MouseEvent event) override;
+	void mouseUp(MouseEvent event) override;
 	void update() override;
 	void draw() override;
 
@@ -20,6 +20,7 @@ class CinderPlatformerApp : public App {
 
 private:
 	GameManager m_GameManager;
+	bool m_mode;
 };
 
 void CinderPlatformerApp::setup()
@@ -28,17 +29,18 @@ void CinderPlatformerApp::setup()
 	setFullScreen(SET_FULLSCREEN);
 }
 
-void CinderPlatformerApp::mouseDown( MouseEvent event )
+void CinderPlatformerApp::mouseDown(MouseEvent event)
 {
+	GetGameManager().GetEventManager().GetEvent("MOUSE_LEFT_DOWN").SetState(event.isLeftDown());
+	GetGameManager().GetEventManager().GetEvent("MOUSE_RIGHT_DOWN").SetState(event.isRightDown());
 }
 
-void CinderPlatformerApp::keyDown(KeyEvent event)
+void CinderPlatformerApp::mouseUp(MouseEvent event)
 {
-	if (event.getCode() == 'D')
-	{
-		
-	}
+	GetGameManager().GetEventManager().GetEvent("MOUSE_RIGHT_DOWN").SetState(false);
+	GetGameManager().GetEventManager().GetEvent("MOUSE_LEFT_DOWN").SetState(false);
 }
+
 
 void CinderPlatformerApp::update()
 {
