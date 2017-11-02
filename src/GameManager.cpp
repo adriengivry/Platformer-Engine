@@ -6,7 +6,7 @@ GameManager::GameManager() : Manager()
 
 void GameManager::Update()
 {
-	GetGameScene().Update();
+	GetGameScene().Update(GetEventManager());
 }
 
 void GameManager::Display()

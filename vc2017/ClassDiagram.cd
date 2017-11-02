@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CinderPlatformerApp" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAQAAAgAAIIAAAAQAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\src\CinderPlatformerApp.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Actor" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABACAABBAkgAEAFBAAAAwBCAAAAIAAAGAAgAARAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Actor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Component" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Component.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventManager" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAABAgAAgAACAAAEAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\EventManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAACAAQAAABQAAAAAAIAAAABAAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\GameManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameScene" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQAAAAAAAAAAABQAAAIAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\GameScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Manager" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAgAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Manager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQACAKAAAiAAAAAAAAAAACAAAgAQIAAAAgAAAAI=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hitbox" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAEAACAAAAMAAAAAAAEAgAAAAAAAAIAAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Hitbox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AG::Event" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAAABBAAAAEAAAAAAAAwAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\adrie\Desktop\CinderPlatformer\include\Event.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -11,12 +11,20 @@ Actor::~Actor()
 {
 }
 
-void Actor::Update()
+bool Actor::IsHovered(EventManager& p_eventManager) const
+{
+	return GetHitbox().Intersect(p_eventManager.GetMousePosition());
+}
+
+void Actor::Update(EventManager& p_eventManager)
 {
 	if (IsUpdatable())
 	{
 		if (IsTickable())
 			Tick();
+
+		if (IsHoverable() && IsHovered(p_eventManager) && p_eventManager.GetEvent("MOUSE_LEFT_DOWN"))
+			OnMouseover();
 	}
 }
 
@@ -31,4 +39,8 @@ void Actor::Draw()
 	{
 		GetSprite().Draw();
 	}
+}
+
+void Actor::OnMouseover()
+{
 }

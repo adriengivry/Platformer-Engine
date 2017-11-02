@@ -4,6 +4,7 @@
 
 #include "Manager.h"
 #include "Actor.h"
+#include "EventManager.h"
 
 class GameScene : public Manager
 {
@@ -13,7 +14,7 @@ public:
 
 	std::list<Actor*>& GetActors() { return m_actors; }
 
-	void Update();
+	void Update(EventManager& p_eventManager);
 	void Display();
 
 private:

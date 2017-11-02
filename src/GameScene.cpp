@@ -11,10 +11,11 @@ GameScene::~GameScene()
 {
 }
 
-void GameScene::Update()
+void GameScene::Update(EventManager& p_eventManager)
 {
+	
 	for (auto iterator = GetActors().begin(); iterator != GetActors().end(); ++iterator)
-		(*iterator)->Update();
+		(*iterator)->Update(p_eventManager);
 }
 
 void GameScene::Display()

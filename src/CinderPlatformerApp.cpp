@@ -12,6 +12,7 @@ class CinderPlatformerApp : public App {
   public:
 	void setup() override;
 	void mouseDown( MouseEvent event ) override;
+	void keyDown(KeyEvent event) override;
 	void update() override;
 	void draw() override;
 
@@ -31,8 +32,17 @@ void CinderPlatformerApp::mouseDown( MouseEvent event )
 {
 }
 
+void CinderPlatformerApp::keyDown(KeyEvent event)
+{
+	if (event.getCode() == 'D')
+	{
+		
+	}
+}
+
 void CinderPlatformerApp::update()
 {
+	GetGameManager().GetEventManager().UpdateMousePosition(getMousePos());
 	GetGameManager().Update();
 }
 
