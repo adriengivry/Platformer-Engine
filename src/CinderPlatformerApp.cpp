@@ -13,6 +13,8 @@ class CinderPlatformerApp : public App {
 	void setup() override;
 	void mouseDown(MouseEvent event) override;
 	void mouseUp(MouseEvent event) override;
+	void keyDown(KeyEvent event) override;
+	void keyUp(KeyEvent event) override;
 	void update() override;
 	void draw() override;
 
@@ -20,7 +22,6 @@ class CinderPlatformerApp : public App {
 
 private:
 	GameManager m_GameManager;
-	bool m_mode;
 };
 
 void CinderPlatformerApp::setup()
@@ -39,6 +40,44 @@ void CinderPlatformerApp::mouseUp(MouseEvent event)
 {
 	GetGameManager().GetEventManager().GetEvent("MOUSE_RIGHT_DOWN").SetState(false);
 	GetGameManager().GetEventManager().GetEvent("MOUSE_LEFT_DOWN").SetState(false);
+}
+
+void CinderPlatformerApp::keyDown(KeyEvent event)
+{
+	switch (event.getChar())
+	{
+	case 'w':
+		GetGameManager().GetEventManager().GetEvent("MOVE_UP").SetState(true);
+		break;
+	case 'a':
+		GetGameManager().GetEventManager().GetEvent("MOVE_LEFT").SetState(true);
+		break;
+	case 's':
+		GetGameManager().GetEventManager().GetEvent("MOVE_DOWN").SetState(true);
+		break;
+	case 'd':
+		GetGameManager().GetEventManager().GetEvent("MOVE_RIGHT").SetState(true);
+		break;
+	}
+}
+
+void CinderPlatformerApp::keyUp(KeyEvent event)
+{
+	switch (event.getChar())
+	{
+	case 'w':
+		GetGameManager().GetEventManager().GetEvent("MOVE_UP").SetState(false);
+		break;
+	case 'a':
+		GetGameManager().GetEventManager().GetEvent("MOVE_LEFT").SetState(false);
+		break;
+	case 's':
+		GetGameManager().GetEventManager().GetEvent("MOVE_DOWN").SetState(false);
+		break;
+	case 'd':
+		GetGameManager().GetEventManager().GetEvent("MOVE_RIGHT").SetState(false);
+		break;
+	}
 }
 
 

@@ -9,6 +9,11 @@ EventManager::EventManager()
 
 	AddEvent("MOUSE_LEFT_UP", false);
 	AddEvent("MOUSE_RIGHT_UP", false);
+
+	AddEvent("MOVE_RIGHT", false);
+	AddEvent("MOVE_LEFT", false);
+	AddEvent("MOVE_UP", false);
+	AddEvent("MOVE_DOWN", false);
 }
 
 std::map<std::string, AG::Event>& EventManager::GetEvents()
