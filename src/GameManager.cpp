@@ -2,6 +2,7 @@
 
 GameManager::GameManager() : Manager()
 {
+	GetGameScene().Setup();		
 }
 
 void GameManager::Update()
@@ -11,5 +12,5 @@ void GameManager::Update()
 
 void GameManager::Display()
 {
-	GetGameScene().Display();
+	GetGameScene().Draw();
 }

@@ -16,7 +16,8 @@ public:
 
 	void Setup();
 	void Update(EventManager& p_eventManager);
-	void Display();
+	void Draw();
+	void DrawGrid() const;
 
 private:
 	std::list<Actor*> m_actors;

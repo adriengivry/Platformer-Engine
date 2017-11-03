@@ -46,10 +46,10 @@ void Sprite::Move(const float p_x, const float p_y)
 
 void Sprite::Draw() const
 {
-	if (GetTexture())
+	if (GetTexture() && SHOW_SPRITE)
 	{
 		gl::pushModelMatrix();
-		gl::translate(GetPosition().y, GetPosition().x);
+		gl::translate(GetPosition().x, GetPosition().y);
 		gl::scale(GetScale().x, GetScale().y);
 		gl::draw(GetTexture());
 		gl::popModelMatrix();

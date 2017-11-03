@@ -8,6 +8,11 @@ Hitbox::Hitbox(const float p_x, const float p_y, const float p_sizeX, const floa
 	m_size.y = p_sizeY;
 }
 
+cinder::Rectf Hitbox::GetRectf()
+{
+	return cinder::Rectf(GetPosition().x, GetPosition().y, GetPosition().x + GetSize().x, GetPosition().y + GetSize().y);
+}
+
 void Hitbox::SetPosition(const float p_x, const float p_y)
 {
 	m_position.x = p_x;

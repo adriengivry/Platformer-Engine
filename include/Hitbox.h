@@ -15,6 +15,8 @@ public:
 	glm::vec2& GetSize() { return m_size; }
 	glm::vec2 GetSize() const { return m_size; }
 
+	cinder::Rectf GetRectf();
+
 	void SetPosition(const float p_x, const float p_y);
 	void SetPosition(const glm::vec2& p_position) { m_position = p_position; }
 

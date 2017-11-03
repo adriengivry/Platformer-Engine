@@ -32,12 +32,17 @@ public:
 	void SetTexture(const std::string p_path) { m_sprite.SetTexture(p_path); }
 	void SetTexture(const gl::Texture2dRef p_texture) { m_sprite.SetTexture(p_texture); }
 
-	void Update(EventManager& p_eventManager);
-	void Tick();
-	void Draw();
-	void OnMouseover();
-	void OnMouseLeftclick();
-	void OnMouseRightClick();
+	virtual void MergeTextureToHitbox();
+
+	void Move(const float p_x, const float p_y);
+
+	virtual void Update(EventManager& p_eventManager);
+	virtual void Tick();
+	virtual void DrawHitbox();
+	virtual void Draw();
+	virtual void OnMouseover();
+	virtual void OnMouseLeftclick();
+	virtual void OnMouseRightClick();
 
 private:
 	bool m_isUpdatable;
