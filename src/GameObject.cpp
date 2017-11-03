@@ -28,35 +28,34 @@ void GameObject::Move(const float p_x, const float p_y)
 	GetSprite().SetPosition(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y);
 }
 
-void GameObject::Update(EventManager& p_eventManager)
+void GameObject::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
 	MergeTextureToHitbox();
 
 	if (IsUpdatable())
 	{
 		if (IsTickable())
-			Tick();
+			Tick(p_eventManager, p_gameInfo);
 
 		if (IsHoverable() && IsHovered(p_eventManager))
-			OnMouseover();
+			OnMouseover(p_eventManager, p_gameInfo);
 
 		if (IsHoverable() && IsHovered(p_eventManager) && p_eventManager.GetEvent("MOUSE_LEFT_DOWN").IsOn())
 		{
-			OnMouseLeftclick();
+			OnMouseLeftclick(p_eventManager, p_gameInfo);
 			p_eventManager.GetEvent("MOUSE_LEFT_DOWN").Toggle();
 		}
 
 		if (IsHoverable() && IsHovered(p_eventManager) && p_eventManager.GetEvent("MOUSE_RIGHT_DOWN").IsOn())
 		{
-			OnMouseRightClick();
+			OnMouseRightClick(p_eventManager, p_gameInfo);
 			p_eventManager.GetEvent("MOUSE_RIGHT_DOWN").Toggle();
 		}
 	}
 }
 
-void GameObject::Tick()
+void GameObject::Tick(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
-	// TODO: Actor tick
 }
 
 void GameObject::DrawHitbox()
@@ -80,14 +79,15 @@ void GameObject::Draw()
 	}
 }
 
-void GameObject::OnMouseover()
+void GameObject::OnMouseover(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
 }
 
-void GameObject::OnMouseLeftclick()
+void GameObject::OnMouseLeftclick(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
 }
 
-void GameObject::OnMouseRightClick()
+void GameObject::OnMouseRightClick(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
 }
+

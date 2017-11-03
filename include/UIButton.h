@@ -7,6 +7,4 @@ class UIButton : public UIObject
 public:
 	UIButton();
 	~UIButton() {}
-
-	void OnMouseLeftclick() override;
 };

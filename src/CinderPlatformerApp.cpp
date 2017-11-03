@@ -45,12 +45,15 @@ void CinderPlatformerApp::mouseUp(MouseEvent event)
 void CinderPlatformerApp::update()
 {
 	GetGameManager().GetEventManager().UpdateMousePosition(getMousePos());
+	GetGameManager().GetGameInfo().m_lastTime = GetGameManager().GetGameInfo().m_thisTime;
+	GetGameManager().GetGameInfo().m_thisTime = getElapsedSeconds();
+	GetGameManager().GetGameInfo().m_deltaTime = GetGameManager().GetGameInfo().m_thisTime - GetGameManager().GetGameInfo().m_lastTime;
 	GetGameManager().Update();
 }
 
 void CinderPlatformerApp::draw()
 {
-	gl::clear( Color( 0, 0, 0 ) );
+	gl::clear(Color( 0, 0, 0 ));
 	GetGameManager().Display();
 }
 

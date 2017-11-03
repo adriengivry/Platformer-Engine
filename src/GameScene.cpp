@@ -1,8 +1,8 @@
 #include "GameScene.h"
 
-GameScene::GameScene() : Manager()
+GameScene::GameScene(EventManager& p_eventManager, GameInfo& p_gameInfo)
+	: Manager(), m_eventManager(p_eventManager), m_gameInfo(p_gameInfo)
 {
-	
 }
 
 GameScene::~GameScene()
@@ -18,11 +18,10 @@ void GameScene::Setup()
 	GetActors().push_back(character);
 }
 
-void GameScene::Update(EventManager& p_eventManager)
-{
-	
+void GameScene::Update()
+{	
 	for (auto iterator = GetActors().begin(); iterator != GetActors().end(); ++iterator)
-		(*iterator)->Update(p_eventManager);
+		(*iterator)->Update(GetEventManager(), GetGameInfo());
 }
 
 void GameScene::Draw()

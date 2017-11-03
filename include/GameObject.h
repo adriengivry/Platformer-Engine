@@ -4,6 +4,7 @@
 #include "Sprite.h"
 #include "Hitbox.h"
 #include "EventManager.h"
+#include "GameInfo.h"
 
 class GameObject : public Object
 {
@@ -36,13 +37,13 @@ public:
 
 	void Move(const float p_x, const float p_y);
 
-	virtual void Update(EventManager& p_eventManager);
-	virtual void Tick();
+	virtual void Update(EventManager& p_eventManager, GameInfo& p_gameInfo);
+	virtual void Tick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void DrawHitbox();
 	virtual void Draw();
-	virtual void OnMouseover();
-	virtual void OnMouseLeftclick();
-	virtual void OnMouseRightClick();
+	virtual void OnMouseover(EventManager& p_eventManager, GameInfo& p_gameInfo);
+	virtual void OnMouseLeftclick(EventManager& p_eventManager, GameInfo& p_gameInfo);
+	virtual void OnMouseRightClick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 
 private:
 	bool m_isUpdatable;

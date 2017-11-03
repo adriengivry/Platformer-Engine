@@ -2,15 +2,24 @@
 
 GameManager::GameManager() : Manager()
 {
-	GetGameScene().Setup();		
+	SetGameScene(new GameScene(GetEventManager(), GetGameInfo()));
+	SetUserInterface(new UserInterface(GetEventManager(), GetGameInfo(), GetGameScene()));
+	GetGameScene().Setup();
+}
+
+GameManager::~GameManager()
+{
+	delete &GetGameScene();
 }
 
 void GameManager::Update()
 {
-	GetGameScene().Update(GetEventManager());
+	GetGameScene().Update();
+	GetUserInterface().Update();
 }
 
 void GameManager::Display()
 {
 	GetGameScene().Draw();
+	GetUserInterface().Draw();
 }
