@@ -47,7 +47,7 @@ void CinderPlatformerApp::keyDown(KeyEvent event)
 	switch (event.getChar())
 	{
 	case 'w':
-		GetGameManager().GetEventManager().GetEvent("MOVE_UP").SetState(true);
+		GetGameManager().GetEventManager().GetEvent("JUMP").SetState(true);
 		break;
 	case 'a':
 		GetGameManager().GetEventManager().GetEvent("MOVE_LEFT").SetState(true);
@@ -66,7 +66,7 @@ void CinderPlatformerApp::keyUp(KeyEvent event)
 	switch (event.getChar())
 	{
 	case 'w':
-		GetGameManager().GetEventManager().GetEvent("MOVE_UP").SetState(false);
+		GetGameManager().GetEventManager().GetEvent("JUMP").SetState(false);
 		break;
 	case 'a':
 		GetGameManager().GetEventManager().GetEvent("MOVE_LEFT").SetState(false);

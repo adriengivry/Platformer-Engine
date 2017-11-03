@@ -12,7 +12,7 @@ EventManager::EventManager()
 
 	AddEvent("MOVE_RIGHT", false);
 	AddEvent("MOVE_LEFT", false);
-	AddEvent("MOVE_UP", false);
+	AddEvent("JUMP", false);
 	AddEvent("MOVE_DOWN", false);
 }
 

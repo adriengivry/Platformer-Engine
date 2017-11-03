@@ -27,11 +27,11 @@ void UserInterface::Draw()
 	cinder::gl::drawString("MOUSE_LEFT_DOWN : " + std::to_string(int(mouseLeft)), glm::vec2(10, 90), m_gameInfoColor, m_gameInfoFont);
 	cinder::gl::drawString("MOUSE_RIGHT_DOWN : " + std::to_string(int(mouseRight)), glm::vec2(10, 110), m_gameInfoColor, m_gameInfoFont);
 
-	const bool moveUp = GetEventManager().GetEvent("MOVE_UP").GetState();
+	const bool moveUp = GetEventManager().GetEvent("JUMP").GetState();
 	const bool moveLeft = GetEventManager().GetEvent("MOVE_LEFT").GetState();
 	const bool moveDown = GetEventManager().GetEvent("MOVE_DOWN").GetState();
 	const bool moveRight = GetEventManager().GetEvent("MOVE_RIGHT").GetState();
-	cinder::gl::drawString("MOVE_UP : " + std::to_string(int(moveUp)), glm::vec2(10, 130), m_gameInfoColor, m_gameInfoFont);
+	cinder::gl::drawString("JUMP : " + std::to_string(int(moveUp)), glm::vec2(10, 130), m_gameInfoColor, m_gameInfoFont);
 	cinder::gl::drawString("MOVE_LEFT : " + std::to_string(int(moveLeft)), glm::vec2(10, 150), m_gameInfoColor, m_gameInfoFont);
 	cinder::gl::drawString("MOVE_DOWN : " + std::to_string(int(moveDown)), glm::vec2(10, 170), m_gameInfoColor, m_gameInfoFont);
 	cinder::gl::drawString("MOVE_RIGHT : " + std::to_string(int(moveRight)), glm::vec2(10, 190), m_gameInfoColor, m_gameInfoFont);

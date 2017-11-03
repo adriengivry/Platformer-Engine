@@ -18,20 +18,11 @@ void GameObject::MergeTextureToHitbox()
 {
 	GetHitbox().GetSize().x = GetSprite().GetTexture()->getSize().x * GetSprite().GetScale().x;
 	GetHitbox().GetSize().y = GetSprite().GetTexture()->getSize().y * GetSprite().GetScale().y;
-}
-
-void GameObject::Move(const float p_x, const float p_y)
-{
-	GetHitbox().GetPosition().x += p_x;
-	GetHitbox().GetPosition().y += p_y;
-
 	GetSprite().SetPosition(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y);
 }
 
 void GameObject::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
-	MergeTextureToHitbox();
-
 	if (IsUpdatable())
 	{
 		if (IsTickable())
@@ -75,6 +66,7 @@ void GameObject::Draw()
 	if (IsDrawable())
 	{
 		DrawHitbox();
+		MergeTextureToHitbox();
 		GetSprite().Draw();
 	}
 }

@@ -35,8 +35,6 @@ public:
 
 	virtual void MergeTextureToHitbox();
 
-	void Move(const float p_x, const float p_y);
-
 	virtual void Update(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void Tick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void DrawHitbox();
@@ -45,7 +43,7 @@ public:
 	virtual void OnMouseLeftclick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void OnMouseRightClick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 
-private:
+protected:
 	bool m_isUpdatable;
 	bool m_isTickable;
 	bool m_isDrawable;

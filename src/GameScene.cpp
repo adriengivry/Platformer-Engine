@@ -8,20 +8,24 @@ GameScene::GameScene(EventManager& p_eventManager, GameInfo& p_gameInfo)
 GameScene::~GameScene()
 {
 	for (auto iterator = GetActors().begin(); iterator != GetActors().end(); ++iterator)
-		delete *iterator;
+		delete (*iterator).second;
 }
 
 void GameScene::Setup()
 {
 	Actor* character = new Actor;
 	character->SetTexture("character.png");
-	GetActors().push_back(character);
+
+	Player* player = new Player;
+
+	AddActor(1, character);
+	AddActor(2, player);
 }
 
 void GameScene::Update()
 {	
 	for (auto iterator = GetActors().begin(); iterator != GetActors().end(); ++iterator)
-		(*iterator)->Update(GetEventManager(), GetGameInfo());
+		(*iterator).second->Update(GetEventManager(), GetGameInfo());
 }
 
 void GameScene::Draw()
@@ -29,7 +33,7 @@ void GameScene::Draw()
 	DrawGrid();
 
 	for (auto iterator = GetActors().begin(); iterator != GetActors().end(); ++iterator)
-		(*iterator)->Draw();
+		(*iterator).second->Draw();
 }
 
 void GameScene::DrawGrid() const
