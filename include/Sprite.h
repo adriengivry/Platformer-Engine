@@ -3,7 +3,6 @@
 #include <string>
 
 #include "cinder/app/App.h"
-#include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 
 #include "Component.h"
@@ -29,7 +28,12 @@ public:
 	void SetScale(const float p_scaleX, const float p_scaleY);
 	void SetScale(const vec2& p_scale);
 	void SetTexture(const std::string p_path);
-	void SetTexture(const gl::Texture2dRef p_texture) { m_texture = p_texture; }
+	void SetTexture(const gl::Texture2dRef p_texture);
+	void SetVerticalFlip(const bool p_state) { m_verticalFlip = p_state; }
+	void SetEmpty(const bool p_state) { m_isEmpty = p_state; }
+
+	bool MustBeVerticalFlipped() const { return m_verticalFlip; }
+	bool IsEmpty() const { return m_isEmpty; }
 
 	void Move(const float p_x, const float p_y);
 
@@ -38,6 +42,9 @@ public:
 private:
 	vec2 m_position;
 	vec2 m_scale;
+
+	bool m_isEmpty;
+	bool m_verticalFlip;
 
 	gl::Texture2dRef m_texture;
 };

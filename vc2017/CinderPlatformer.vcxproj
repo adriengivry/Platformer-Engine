@@ -115,9 +115,9 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ClCompile Include="..\src\Actor.cpp" />
+    <ClCompile Include="..\src\Animation.cpp" />
     <ClCompile Include="..\src\CinderPlatformerApp.cpp" />
     <ClCompile Include="..\src\Component.cpp" />
     <ClCompile Include="..\src\EventManager.cpp" />
@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Actor.h" />
+    <ClInclude Include="..\include\Animation.h" />
     <ClInclude Include="..\include\Component.h" />
     <ClInclude Include="..\include\Event.h" />
     <ClInclude Include="..\include\EventManager.h" />

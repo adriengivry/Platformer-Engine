@@ -5,11 +5,14 @@ Sprite::Sprite(const std::string p_imagePath, const float p_x, const float p_y, 
 {
 	SetObjectType("SPRITE");
 
+	SetEmpty(true);
+
 	if (p_imagePath != "")
 		SetTexture(p_imagePath);
 
 	SetPosition(p_x, p_y);
 	SetScale(p_scaleX, p_scaleY);
+	SetVerticalFlip(false);	
 }
 
 void Sprite::SetPosition(const float p_posX, const float p_posY)
@@ -40,6 +43,12 @@ void Sprite::SetTexture(const std::string p_path)
 	SetTexture(gl::Texture2d::create(img));
 }
 
+void Sprite::SetTexture(const gl::Texture2dRef p_texture)
+{
+	m_texture = p_texture;
+	SetEmpty(false);
+}
+
 void Sprite::Move(const float p_x, const float p_y)
 {
 	m_position.x += p_x;
@@ -48,11 +57,20 @@ void Sprite::Move(const float p_x, const float p_y)
 
 void Sprite::Draw() const
 {
-	if (GetTexture() && SHOW_SPRITE)
+	if (!IsEmpty() && SHOW_SPRITE)
 	{
+		if (GetTexture())
 		gl::pushModelMatrix();
-		gl::translate(GetPosition().x, GetPosition().y);
-		gl::scale(GetScale().x, GetScale().y);
+		if (MustBeVerticalFlipped())
+		{
+			gl::translate(GetPosition().x + GetTexture()->getSize().x, GetPosition().y);
+			gl::scale(-GetScale().x, GetScale().y);
+		}
+		else
+		{
+			gl::translate(GetPosition().x, GetPosition().y);
+			gl::scale(GetScale().x, GetScale().y);
+		}
 		gl::draw(GetTexture());
 		gl::popModelMatrix();
 	}

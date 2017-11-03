@@ -1,16 +1,19 @@
 #pragma once
 
+#include <map>
+
 #include "Object.h"
 #include "Sprite.h"
 #include "Hitbox.h"
 #include "EventManager.h"
 #include "GameInfo.h"
+#include "Animation.h"
 
 class GameObject : public Object
 {
 public:
 	GameObject();
-	virtual ~GameObject() { --s_gameObjectCounter; }
+	virtual ~GameObject();
 
 	Sprite& GetSprite() { return m_sprite; }
 	Hitbox& GetHitbox() { return m_hitbox; }
@@ -33,15 +36,16 @@ public:
 	void SetHoverable(const bool p_state) { m_isHoverable = p_state; }
 	void SetClickable(const bool p_state) { m_isClickable = p_state; }
 
-	void SetTexture(const std::string p_path) { m_sprite.SetTexture(p_path); }
-	void SetTexture(const gl::Texture2dRef p_texture) { m_sprite.SetTexture(p_texture); }
+	void SetTexture(const std::string p_path) { GetSprite().SetTexture(p_path); }
+	void SetTexture(const gl::Texture2dRef p_texture) { GetSprite().SetTexture(p_texture); }
 
-	virtual void MergeTextureToHitbox();
+	virtual void MergeTextureToHitbox(Sprite& p_sprite);
 
 	virtual void Update(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void Tick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void DrawHitbox();
 	virtual void DrawObjectInfo();
+	virtual void DrawSprite();
 	virtual void Draw();
 	virtual void OnMouseover(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void OnMouseLeftclick(EventManager& p_eventManager, GameInfo& p_gameInfo);

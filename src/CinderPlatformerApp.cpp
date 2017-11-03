@@ -17,6 +17,7 @@ class CinderPlatformerApp : public App {
 	void keyUp(KeyEvent event) override;
 	void update() override;
 	void draw() override;
+	void quit() override;
 
 	GameManager& GetGameManager() { return m_GameManager; }
 
@@ -88,12 +89,20 @@ void CinderPlatformerApp::update()
 	GetGameManager().GetGameInfo().m_thisTime = getElapsedSeconds();
 	GetGameManager().GetGameInfo().m_deltaTime = GetGameManager().GetGameInfo().m_thisTime - GetGameManager().GetGameInfo().m_lastTime;
 	GetGameManager().Update();
+	
+	if (GetGameManager().GetGameInfo().m_run == false)
+		quit();
 }
 
 void CinderPlatformerApp::draw()
 {
 	gl::clear(Color( 0, 0, 0 ));
 	GetGameManager().Display();
+}
+
+void CinderPlatformerApp::quit()
+{
+	exit(EXIT_SUCCESS);
 }
 
 CINDER_APP(CinderPlatformerApp, RendererGl)

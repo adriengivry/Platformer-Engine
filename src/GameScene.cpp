@@ -13,13 +13,7 @@ GameScene::~GameScene()
 
 void GameScene::Setup()
 {
-	Actor* character = new Actor;
-	character->SetTexture("character.png");
-
-	Player* player = new Player;
-
-	AddActor(1, character);
-	AddActor(2, player);
+	AddActor(1, new Player);
 }
 
 void GameScene::Update()

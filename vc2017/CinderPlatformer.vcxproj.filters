@@ -89,6 +89,9 @@
     <ClCompile Include="..\src\MovableActor.cpp">
       <Filter>Source Files\Object\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Animation.cpp">
+      <Filter>Source Files\Object\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -150,6 +153,9 @@
     </ClInclude>
     <ClInclude Include="..\include\MovableActor.h">
       <Filter>Header Files\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Animation.h">
+      <Filter>Header Files\Object\Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

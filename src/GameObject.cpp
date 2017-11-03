@@ -13,7 +13,12 @@ GameObject::GameObject() : Object()
 	SetTickable(true);
 	SetDrawable(true);
 	SetHoverable(true);
-	SetClickable(true);
+	SetClickable(true);	
+}
+
+GameObject::~GameObject()
+{
+	--s_gameObjectCounter;
 }
 
 bool GameObject::IsHovered(EventManager& p_eventManager) const
@@ -21,11 +26,11 @@ bool GameObject::IsHovered(EventManager& p_eventManager) const
 	return GetHitbox().Intersect(p_eventManager.GetMousePosition());
 }
 
-void GameObject::MergeTextureToHitbox()
+void GameObject::MergeTextureToHitbox(Sprite& p_sprite)
 {
-	GetHitbox().GetSize().x = GetSprite().GetTexture()->getSize().x * GetSprite().GetScale().x;
-	GetHitbox().GetSize().y = GetSprite().GetTexture()->getSize().y * GetSprite().GetScale().y;
-	GetSprite().SetPosition(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y);
+	GetHitbox().GetSize().x = p_sprite.GetTexture()->getSize().x * p_sprite.GetScale().x;
+	GetHitbox().GetSize().y = p_sprite.GetTexture()->getSize().y * p_sprite.GetScale().y;
+	p_sprite.SetPosition(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y);
 }
 
 void GameObject::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
@@ -74,6 +79,15 @@ void GameObject::DrawObjectInfo()
 	cinder::gl::drawString("SIZE: " + std::to_string(int(GetHitbox().GetSize().x)) + "," + std::to_string(int(GetHitbox().GetSize().y)), glm::vec2(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y + 30));
 }
 
+void GameObject::DrawSprite()
+{
+	if (!GetSprite().IsEmpty())
+	{
+		MergeTextureToHitbox(GetSprite());
+		GetSprite().Draw();
+	}
+}
+
 void GameObject::Draw()
 {
 	if (IsDrawable())
@@ -81,9 +95,7 @@ void GameObject::Draw()
 		if (SHOW_HITBOX)
 			DrawHitbox();
 
-		MergeTextureToHitbox();
-
-		GetSprite().Draw();
+		DrawSprite();
 
 		if (SHOW_GAME_OBJECT_INFO)
 			DrawObjectInfo();

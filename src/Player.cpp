@@ -4,9 +4,12 @@ Player::Player() : MovableActor()
 {
 	SetObjectType("PLAYER");
 
-	SetTexture(PLAYER_SPRITE);
 	SetStuckInScreen(true);
 	SetPhysicBody(true);
+
+	GetAnimations().WALK.LoadFolder("Player/Walking/", 18, "png");
+	GetAnimations().STAND.LoadFolder("Player/Idle/", 12, "png");
+	GetAnimations().DIE.LoadFolder("Player/Dying/", 15, "png");
 }
 
 void Player::CheckControls(EventManager& p_eventManager)
@@ -38,4 +41,10 @@ void Player::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
 	CheckControls(p_eventManager);
 
 	MovableActor::Update(p_eventManager, p_gameInfo);
+}
+
+void Player::Tick(EventManager& p_eventManager, GameInfo& p_gameInfo)
+{
+	if (!IsAlive() && GetCurrentAnimation() == &GetAnimations().DIE && GetCurrentAnimation()->IsEnded())
+		p_gameInfo.m_run = false;
 }
