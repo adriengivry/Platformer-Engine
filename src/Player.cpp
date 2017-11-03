@@ -2,6 +2,8 @@
 
 Player::Player() : MovableActor()
 {
+	SetObjectType("PLAYER");
+
 	SetTexture(PLAYER_SPRITE);
 	SetStuckInScreen(true);
 	SetPhysicBody(true);
@@ -24,7 +26,7 @@ void Player::CheckControls(EventManager& p_eventManager)
 
 	if (p_eventManager.GetEvent("JUMP").IsOn() && !IsJumping())
 	{
-		vy += -PLAYER_JUMP_FORCE;
+		vy = -PLAYER_JUMP_FORCE;
 		SetJumping(true);
 	}
 

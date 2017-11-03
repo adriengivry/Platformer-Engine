@@ -2,4 +2,5 @@
 
 UIButton::UIButton() : UIObject()
 {
+	SetObjectType("UIBUTTON");
 }

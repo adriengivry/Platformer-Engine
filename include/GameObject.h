@@ -10,11 +10,14 @@ class GameObject : public Object
 {
 public:
 	GameObject();
-	virtual ~GameObject() {}
+	virtual ~GameObject() { --s_gameObjectCounter; }
 
 	Sprite& GetSprite() { return m_sprite; }
 	Hitbox& GetHitbox() { return m_hitbox; }
 	Hitbox GetHitbox() const { return m_hitbox; }
+	size_t& GetGameObjectId() { return m_gameObjectId; }
+	static size_t& GetGameObjectCounter() { return s_gameObjectCounter; }
+	static size_t& GetGameObjectTotalCounter() { return s_gameObjectMaxId; }
 
 	bool IsUpdatable() const { return m_isUpdatable; }
 	bool IsTickable() const { return m_isTickable; }
@@ -38,12 +41,17 @@ public:
 	virtual void Update(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void Tick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void DrawHitbox();
+	virtual void DrawObjectInfo();
 	virtual void Draw();
 	virtual void OnMouseover(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void OnMouseLeftclick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void OnMouseRightClick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 
 protected:
+	static size_t s_gameObjectMaxId;
+	static size_t s_gameObjectCounter;
+	size_t m_gameObjectId;
+
 	bool m_isUpdatable;
 	bool m_isTickable;
 	bool m_isDrawable;

@@ -1,5 +1,6 @@
 #include "UIObject.h"
 
-UIObject::UIObject()
+UIObject::UIObject() : GameObject()
 {
+	SetObjectType("UIOBJECT");
 }

@@ -2,4 +2,5 @@
 
 Actor::Actor() : GameObject()
 {
+	SetObjectType("ACTOR");
 }

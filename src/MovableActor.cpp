@@ -2,6 +2,8 @@
 
 MovableActor::MovableActor() : Actor()
 {
+	SetObjectType("MOVABLE_ACTOR");
+
 	SetMovable(true);
 	SetStuckInScreen(false);
 	SetPhysicBody(false);

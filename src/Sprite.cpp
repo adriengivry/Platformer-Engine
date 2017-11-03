@@ -1,8 +1,10 @@
 #include "Sprite.h"
 
 
-Sprite::Sprite(const std::string p_imagePath, const float p_x, const float p_y, const float p_scaleX, const float p_scaleY)
+Sprite::Sprite(const std::string p_imagePath, const float p_x, const float p_y, const float p_scaleX, const float p_scaleY) : Component()
 {
+	SetObjectType("SPRITE");
+
 	if (p_imagePath != "")
 		SetTexture(p_imagePath);
 

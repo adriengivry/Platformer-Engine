@@ -20,7 +20,9 @@ public:
 	GameScene& GetGameScene() const { return m_gameScene; }
 
 	void Update();
-	void Draw();
+	void Draw() const;
+
+	void ShowGameInfo() const;
 
 private:
 	cinder::Font m_gameInfoFont;

@@ -5,7 +5,9 @@
 
 #define SET_FULLSCREEN true
 
-#define SHOW_GAME_INFO
+#define SHOW_GAME_INFO true
+
+#define SHOW_GAME_OBJECT_INFO true
 
 #define SHOW_SPRITE true
 
