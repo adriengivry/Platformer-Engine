@@ -39,10 +39,21 @@ void MovableActor::ChooseTheRightAnimation()
 	}
 }
 
+void MovableActor::ChooseTheRightDirection()
+{
+	if (!IsAlive())
+		return;
+
+	if (GetVelocity().x > 0)
+		SetDirection(DIRECTION_RIGHT);
+	else if (GetVelocity().x < 0)
+		SetDirection(DIRECTION_LEFT);
+}
+
 void MovableActor::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
 {
 	if (IsPhysicBody())
-		ApplyPhysics();
+		ApplyPhysics(p_gameInfo);
 
 	if (IsMovable())
 		Move(GetVelocity().x * p_gameInfo.m_deltaTime, GetVelocity().y * p_gameInfo.m_deltaTime);
@@ -52,10 +63,7 @@ void MovableActor::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
 	if (GetCurrentAnimation())
 		GetCurrentAnimation()->Update(p_gameInfo);
 
-	if (GetVelocity().x > 0)
-		SetDirection(DIRECTION_RIGHT);
-	else if (GetVelocity().x < 0)
-		SetDirection(DIRECTION_LEFT);
+	ChooseTheRightDirection();
 
 	Actor::Update(p_eventManager, p_gameInfo);
 }
@@ -97,9 +105,9 @@ void MovableActor::Move(const float p_x, const float p_y)
 	}
 }
 
-void MovableActor::ApplyPhysics()
+void MovableActor::ApplyPhysics(GameInfo& p_gameInfo)
 {
-	GetVelocity().y += PHYSIC_GRAVITY;
+	GetVelocity().y += PHYSIC_GRAVITY * p_gameInfo.m_deltaTime;
 }
 
 void MovableActor::DrawSprite()

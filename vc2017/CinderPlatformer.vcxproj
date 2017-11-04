@@ -113,14 +113,12 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\src\Actor.cpp" />
     <ClCompile Include="..\src\Animation.cpp" />
     <ClCompile Include="..\src\CinderPlatformerApp.cpp" />
     <ClCompile Include="..\src\Component.cpp" />
     <ClCompile Include="..\src\EventManager.cpp" />
+    <ClCompile Include="..\src\FixedActor.cpp" />
     <ClCompile Include="..\src\GameManager.cpp" />
     <ClCompile Include="..\src\GameObject.cpp" />
     <ClCompile Include="..\src\GameScene.cpp" />
@@ -140,6 +138,7 @@
     <ClInclude Include="..\include\Component.h" />
     <ClInclude Include="..\include\Event.h" />
     <ClInclude Include="..\include\EventManager.h" />
+    <ClInclude Include="..\include\FixedActor.h" />
     <ClInclude Include="..\include\GameInfo.h" />
     <ClInclude Include="..\include\GameManager.h" />
     <ClInclude Include="..\include\GameObject.h" />
@@ -155,6 +154,9 @@
     <ClInclude Include="..\include\UIButton.h" />
     <ClInclude Include="..\include\UIObject.h" />
     <ClInclude Include="..\include\UserInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

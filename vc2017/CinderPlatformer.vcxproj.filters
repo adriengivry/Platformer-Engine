@@ -92,6 +92,9 @@
     <ClCompile Include="..\src\Animation.cpp">
       <Filter>Source Files\Object\Component</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\FixedActor.cpp">
+      <Filter>Source Files\Object\GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -156,6 +159,9 @@
     </ClInclude>
     <ClInclude Include="..\include\Animation.h">
       <Filter>Header Files\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\FixedActor.h">
+      <Filter>Header Files\Object\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

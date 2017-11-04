@@ -48,3 +48,8 @@ void Player::Tick(EventManager& p_eventManager, GameInfo& p_gameInfo)
 	if (!IsAlive() && GetCurrentAnimation() == &GetAnimations().DIE && GetCurrentAnimation()->IsEnded())
 		p_gameInfo.m_run = false;
 }
+
+void Player::OnMouseLeftclick(EventManager& p_eventManager, GameInfo& p_gameInfo)
+{
+	SetLife(0);
+}

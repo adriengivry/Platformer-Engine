@@ -13,7 +13,8 @@ GameObject::GameObject() : Object()
 	SetTickable(true);
 	SetDrawable(true);
 	SetHoverable(true);
-	SetClickable(true);	
+	SetClickable(true);
+	SetHovered(false);
 }
 
 GameObject::~GameObject()
@@ -54,6 +55,8 @@ void GameObject::Update(EventManager& p_eventManager, GameInfo& p_gameInfo)
 			OnMouseRightClick(p_eventManager, p_gameInfo);
 			p_eventManager.GetEvent("MOUSE_RIGHT_DOWN").Toggle();
 		}
+
+		SetHovered(IsHovered(p_eventManager));
 	}
 }
 
@@ -63,20 +66,15 @@ void GameObject::Tick(EventManager& p_eventManager, GameInfo& p_gameInfo)
 
 void GameObject::DrawHitbox()
 {
+	if (IsHovered())
+		gl::color(HITBOX_COLOR_R, HITBOX_COLOR_G, HITBOX_COLOR_B, HITBOX_HOVERED_FILL_ALPHA);
+	else
+		gl::color(HITBOX_COLOR_R, HITBOX_COLOR_G, HITBOX_COLOR_B, HITBOX_FILL_ALPHA);
 
-	gl::color(HITBOX_COLOR_R, HITBOX_COLOR_G, HITBOX_COLOR_B, HITBOX_FILL_ALPHA);
 	gl::drawSolidRect(GetHitbox().GetRectf());
 	gl::color(HITBOX_COLOR_R, HITBOX_COLOR_G, HITBOX_COLOR_B, HITBOX_STROKE_ALPHA);
 	gl::drawStrokedRect(GetHitbox().GetRectf());
 	gl::color(1, 1, 1, 1);
-}
-
-void GameObject::DrawObjectInfo()
-{
-	cinder::gl::drawString("GAME_OBJECT_ID: " + std::to_string(GetGameObjectId()), glm::vec2(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y));
-	cinder::gl::drawString("TYPE: " + GetObjectType(), glm::vec2(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y + 10));
-	cinder::gl::drawString("POS: " + std::to_string(int(GetHitbox().GetPosition().x)) + "," + std::to_string(int(GetHitbox().GetPosition().y)), glm::vec2(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y + 20));
-	cinder::gl::drawString("SIZE: " + std::to_string(int(GetHitbox().GetSize().x)) + "," + std::to_string(int(GetHitbox().GetSize().y)), glm::vec2(GetHitbox().GetPosition().x, GetHitbox().GetPosition().y + 30));
 }
 
 void GameObject::DrawSprite()
@@ -96,9 +94,6 @@ void GameObject::Draw()
 			DrawHitbox();
 
 		DrawSprite();
-
-		if (SHOW_GAME_OBJECT_INFO)
-			DrawObjectInfo();
 	}
 }
 

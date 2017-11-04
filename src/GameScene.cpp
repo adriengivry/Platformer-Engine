@@ -13,7 +13,15 @@ GameScene::~GameScene()
 
 void GameScene::Setup()
 {
-	AddActor(1, new Player);
+	FixedActor* background = new FixedActor;
+	background->Construct("Background/background.jpg", 0, 0);
+	AddActor(0, background);
+
+	FixedActor* block = new FixedActor;
+	block->Construct("Tiles/block.png", 1000, 700);
+	AddActor(1, block);
+
+	AddActor(2, new Player);
 }
 
 void GameScene::Update()

@@ -3,7 +3,6 @@
 #include "Actor.h"
 
 #define DEFAULT_VELOCITY 500
-#define PHYSIC_GRAVITY 20
 
 enum Direction
 {
@@ -47,14 +46,15 @@ public:
 	Sprite* GetCurrentAnimationSprite() const { return GetCurrentAnimation()->GetCurrentSprite();  }
 
 	void ChooseTheRightAnimation();
+	void ChooseTheRightDirection();
 
 	void Update(EventManager& p_eventManager, GameInfo& p_gameInfo) override;
 	void Move(const float p_x, const float p_y);
-	void ApplyPhysics();
+	void ApplyPhysics(GameInfo& p_gameInfo);
 
 	void DrawSprite() override;
 
-private:
+protected:
 	bool m_isMovable;
 	bool m_isStuckInScreen;
 	bool m_isPhysicBody;

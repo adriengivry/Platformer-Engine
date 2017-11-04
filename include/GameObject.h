@@ -28,6 +28,7 @@ public:
 	bool IsHoverable() const { return m_isHoverable; }
 	bool IsClickable() const { return m_isClickable; }
 
+	bool IsHovered() const { return m_isHovered; }
 	bool IsHovered(EventManager& p_eventManager) const;
 
 	void SetUpdatable(const bool p_state) { m_isUpdatable = p_state; }
@@ -35,6 +36,7 @@ public:
 	void SetDrawable(const bool p_state) { m_isDrawable = p_state; }
 	void SetHoverable(const bool p_state) { m_isHoverable = p_state; }
 	void SetClickable(const bool p_state) { m_isClickable = p_state; }
+	void SetHovered(const bool p_state) { m_isHovered = p_state; }
 
 	void SetTexture(const std::string p_path) { GetSprite().SetTexture(p_path); }
 	void SetTexture(const gl::Texture2dRef p_texture) { GetSprite().SetTexture(p_texture); }
@@ -44,7 +46,6 @@ public:
 	virtual void Update(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void Tick(EventManager& p_eventManager, GameInfo& p_gameInfo);
 	virtual void DrawHitbox();
-	virtual void DrawObjectInfo();
 	virtual void DrawSprite();
 	virtual void Draw();
 	virtual void OnMouseover(EventManager& p_eventManager, GameInfo& p_gameInfo);
@@ -61,6 +62,7 @@ protected:
 	bool m_isDrawable;
 	bool m_isHoverable;
 	bool m_isClickable;
+	bool m_isHovered;
 
 	Sprite m_sprite;
 	Hitbox m_hitbox;
